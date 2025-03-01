@@ -4,6 +4,71 @@
 
 ## Optimal Results
 
+![Final1](Results/Indian_Coins_OG.png)
+![Final2](Results/Detected_Coins_Optimal.png)
+![Final3](Results/Segmented_Coins_Optimal.png)
+
+### Coin Detection Algorithm Improvements
+#### Grid Search Optimization
+
+The algorithm successfully detected 30/34 coins through systematic parameter optimization.
+1. Core Search Parameters
+
+    Minimum Areas: [200, 300, 400]
+
+    Canny Low Thresholds: [30, 40, 50]
+
+    Canny High Thresholds: [100, 120, 150]
+
+    Circularity Thresholds: [0.7, 0.75]
+
+    Minimum Radius: [25]
+
+2. Key Improvements
+Preprocessing:
+
+    - CLAHE enhancement (clipLimit=2.0, tileGridSize=(8,8))
+
+    - Gaussian blur with (7,7) kernel
+
+    - Two-stage Canny edge detection
+
+Morphological Operations:
+
+    - Small kernel (3,3) for precise edge operations
+
+    - Single iteration dilation
+
+    - Sequential dilate → erode → close pipeline
+
+Contour Processing:
+
+    - Dynamic area filtering (200-50000 pixels)
+
+    - Strict circularity check (0.75)
+
+    - Minimum radius validation (25 pixels)
+
+    - Close coin detection (10 pixel threshold)
+
+Segmentation Optimization:
+
+    - Two-pass contour filtering
+
+    - Center-based position tracking
+
+    - Adaptive parameter selection
+
+Results:
+
+    - Detection Accuracy: 88% (30/34 coins)
+
+    - Robust edge preservation
+
+    - Minimal false positives
+  
+
+
 ## First Implementation
 
 • Initial Implementation Issues:
