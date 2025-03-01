@@ -2,11 +2,16 @@
 
 # Question 1: Coin Detection, Segmentation and Counting
 
-- The coin detection algorithm faced two main challenges in the first implementation.
+- The coin detection algorithm faced 3 main challenges in the first implementation.
 -  First, some coins were merged in the segmentation output due to connected edges after preprocessing. This occurs when the edge detection and morphological operations create bridges between adjacent coins, causing the contour detection to interpret them as a single object.
 -  This is particularly evident in cases where two or more coins are close together or touching as can be seen in the original as well as segmented outputs below.
 - The second issue involves missed coin detections, where the algorithm failed to outline all coins in the image due to suboptimal edge detection parameters (Canny thresholds too strict at 200-250), inadequate blur kernel size, and morphological operations that don't effectively separate touching coins while maintaining edge integrity.
 - The  use of RETR_EXTERNAL in contour detection also limits the algorithm to only outer contours, missing internal boundaries when coins are touching. Additionally, the lack of shape-based validation (like circularity checks) and proper distance-based separation means that merged coins aren't being properly identified and separated, leading to incorrect coin counts and segmentation results.
+- Third, some of the segmented coin images, only had the coin outline and not the interior structure. This occurs due to binary masking (cv2.bitwise_and) losing internal pixel intensities. This affects only some coins because variations in lighting and contrast across the image result in inconsistent edge detection and contour filling - coins with stronger contrast retain their details while those with weaker boundaries get reduced to outlines.
+
+  ![Segmented Coins](Results/Segmented_Coins_Suboptimal)
+  ![Detected Coins](Results/Detected_Coins_Suboptimal)
+  
 
 # Question 2: Panorama Stitching
 
