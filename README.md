@@ -9,8 +9,8 @@
 - The  use of RETR_EXTERNAL in contour detection also limits the algorithm to only outer contours, missing internal boundaries when coins are touching. Additionally, the lack of shape-based validation (like circularity checks) and proper distance-based separation means that merged coins aren't being properly identified and separated, leading to incorrect coin counts and segmentation results.
 - Third, some of the segmented coin images, only had the coin outline and not the interior structure. This occurs due to binary masking (cv2.bitwise_and) losing internal pixel intensities. This affects only some coins because variations in lighting and contrast across the image result in inconsistent edge detection and contour filling - coins with stronger contrast retain their details while those with weaker boundaries get reduced to outlines.
 
-  ![Segmented Coins](Results/Segmented_Coins_Suboptimal)
-  ![Detected Coins](Results/Detected_Coins_Suboptimal)
+  ![Segmented Coins](Results/Segmented_Coins_Suboptimal.png)
+  ![Detected Coins](Results/Detected_Coins_Suboptimal.png)
   
 
 # Question 2: Panorama Stitching
