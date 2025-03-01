@@ -31,7 +31,7 @@ The following three images of a living room were used as input:
    - Images were automatically aligned and blended
    - The final panorama was generated:
 
-![Final Panorama](Results/Pan_Living_Room.png)
+![Final Panorama](Results/Pan_Living_Room_Final.png)
 
 ### Implementation
 
