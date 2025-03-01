@@ -51,3 +51,6 @@ The implementation uses the following key components:
    - The sequential stitching approach (stitching images one by one) can accumulate errors, as any misalignment in earlier steps propagates and amplifies through subsequent stitching operations. This explains why the final panorama appears distorted compared to the OpenCV Stitcher class implementation, which uses a more sophisticated global alignment and blending strategy.
 ![Distorted Panorama](Results/Pan_Living_Room_distorted.png)
 
+2. **Using other sets of images**
+   - 
+
