@@ -52,6 +52,7 @@ The implementation uses the following key components:
 ![Distorted Panorama](Results/Pan_Living_Room_distorted.png)
 
 2. **Using other sets of images**
+   - I tried to perform stitching on another indoor scene - hostel common room and an outdoor scene - consisting of lots of trees (balcony view). The results are summarised below.
    - There was a huge variation in panorama quality between the two indoor scenes - living room(Refer to the Optimal Results section) and the hostel common room (elaborated below).
    -  The living room scene had more favorable characteristics for stitching: consistent depth of field, well-distributed features across the frame, and uniform lighting conditions.
    -  In contrast, the hostel room scene presented more challenging conditions. The presence of a sofa in close proximity to the camera created significant parallax error.
@@ -62,4 +63,10 @@ The implementation uses the following key components:
    -  Additionally, the presence of windows in the hostel room scene introduced significant exposure variations, with bright light sources creating high contrast areas and uneven illumination across the capturing plane. These extreme lighting differences from the windows caused inconsistent feature detection between overlapping images and created challenges in blending areas where bright window light met darker indoor shadows, further complicating the stitching process.
    ![Hostel Common Room Keypoints](Results/Hostel_Common_Room_Keypoints.png)
    ![Hostel Common Room Panorama](Results/Pan_Hostel_Common_Room.png)
+   - The panorama stitching of the outdoor scene presented interesting challenges and results.
+   -  The algorithm successfully maintained color consistency and achieved decent alignment in the central regions, particularly in the tree foliage and ground areas, it struggled with perspective distortion at the edges.
+   -  The presence of approximately 100,000 keypoints per image, while providing extensive feature detection, may have introduced noise in the matching process.
+   -   Notable issues include black regions at the image boundaries and visible seam lines, particularly in the walkway area.
+   -   These artifacts can be attributed to parallax errors from varying object depths, the repetitive patterns in the foliage challenging the feature matching process, and possible camera rotation during capture.
+   -   The results as shown below highlight the delicate balance needed between having sufficient keypoints for matching while avoiding noise that can affect the homography calculation and final stitching quality.
 
