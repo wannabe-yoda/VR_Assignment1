@@ -70,5 +70,6 @@ The implementation uses the following key components:
    -   These artifacts can be attributed to parallax errors from varying object depths, the repetitive patterns in the foliage challenging the feature matching process, and possible camera rotation during capture.
    -   The results as shown below highlight the delicate balance needed between having sufficient keypoints for matching while avoiding noise that can affect the homography calculation and final stitching quality.
    ![Outdoor Keypoints](Results/Outdoor_Keypoints.png)
+   ![Outdoor Panorama](Results/Outdoor_Panorama.png)
 
 
