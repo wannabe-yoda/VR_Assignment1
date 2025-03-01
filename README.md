@@ -69,4 +69,6 @@ The implementation uses the following key components:
    -   Notable issues include black regions at the image boundaries and visible seam lines, particularly in the walkway area.
    -   These artifacts can be attributed to parallax errors from varying object depths, the repetitive patterns in the foliage challenging the feature matching process, and possible camera rotation during capture.
    -   The results as shown below highlight the delicate balance needed between having sufficient keypoints for matching while avoiding noise that can affect the homography calculation and final stitching quality.
+   ![Outdoor Keypoints](Results/Outdoor_Keypoints.png)
+
 
