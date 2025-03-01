@@ -2,6 +2,8 @@
 
 # Question 1: Coin Detection, Segmentation and Counting
 
+##First Implementation
+
 - The coin detection algorithm faced 3 main challenges in the first implementation.
 -  First, some coins were merged in the segmentation output due to connected edges after preprocessing. This occurs when the edge detection and morphological operations create bridges between adjacent coins, causing the contour detection to interpret them as a single object.
 -  This is particularly evident in cases where two or more coins are close together or touching as can be seen in the original as well as segmented outputs below.
@@ -11,6 +13,21 @@
 
   ![Segmented Coins](Results/Segmented_Coins_Suboptimal.png)
   ![Detected Coins](Results/Detected_Coins_Suboptimal.png)
+
+  ## Second Implementation
+  • Improvements:
+  - Optimized Canny edge detection (100-200 vs 200-250)
+  - Enhanced contrast using CLAHE
+  - Added circularity checks and distance-based separation
+  - Better segmentation with preserved internal details
+  - Reduced merged coin detection
+
+  • Current Issue:
+  - Under-detection (22 vs 34 coins) due to strict filtering parameters (area, circularity, distance) that exclude valid coins.
+  - 
+  ![Segmented Coins1](Results/Segmented_Coins_Suboptimal_1.png)
+  ![Detected Coins2](Results/Detected_Coins_Suboptimal_1.png)
+  
   
 
 # Question 2: Panorama Stitching
