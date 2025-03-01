@@ -1,5 +1,13 @@
 # VR_Assignment1
 
+# Question 1: Coin Detection, Segmentation and Counting
+
+- The coin detection algorithm faced two main challenges in the first implementation.
+-  First, some coins were merged in the segmentation output due to connected edges after preprocessing. This occurs when the edge detection and morphological operations create bridges between adjacent coins, causing the contour detection to interpret them as a single object.
+-  This is particularly evident in cases where two or more coins are close together or touching as can be seen in the original as well as segmented outputs below.
+- The second issue involves missed coin detections, where the algorithm failed to outline all coins in the image due to suboptimal edge detection parameters (Canny thresholds too strict at 200-250), inadequate blur kernel size, and morphological operations that don't effectively separate touching coins while maintaining edge integrity.
+- The  use of RETR_EXTERNAL in contour detection also limits the algorithm to only outer contours, missing internal boundaries when coins are touching. Additionally, the lack of shape-based validation (like circularity checks) and proper distance-based separation means that merged coins aren't being properly identified and separated, leading to incorrect coin counts and segmentation results.
+
 # Question 2: Panorama Stitching
 
 Keypoints of 3 overlapping images were identified using SIFT and they were stitched together using OpenCV's stitcher class. The following section shows the final satisfactory output. The next section will show the outputs that were not satisfactory and then the analysis of the entire process. 
