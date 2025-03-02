@@ -11,7 +11,7 @@ Initial parameters were too restrictive, missing several unique coins:
 
 ### Parameter Optimization Process
 
-1. **First Improvement (32 coins)**
+1. **Improvement (32 coins)**
    - Reduced min_area to detect smaller coins
    - Lowered circularity threshold to accommodate hexagonal shape
    - Modified parameters:
@@ -20,6 +20,7 @@ Initial parameters were too restrictive, missing several unique coins:
      circularities = [0.45, 0.5, 0.55]
      min_radii = [25, 27, 30]
      ```
+     Please scroll down to check the iterations made to get to 32 coins.
 
 2. **Final Optimization (33 coins)**
    - Further reduced min_area to 75
@@ -71,7 +72,6 @@ The results are depicted below:
      * Strict Canny thresholds (200-250)
      * Poor blur kernel parameters
      * Ineffective morphological operations
-   - RETR_EXTERNAL limiting detection to outer contours only
    - No shape validation or distance-based separation
    - Resulted in significant under-counting
 
