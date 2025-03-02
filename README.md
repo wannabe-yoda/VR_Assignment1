@@ -1,7 +1,7 @@
 # VR_Assignment1
 
 
-VR_Assignment1_SaiShrutiPrakhya_MS2024018/
+"""VR_Assignment1_SaiShrutiPrakhya_MS2024018/
 ├── src/
 │   ├── coin_detection_and_segmentation.py
 │   └── panorama.py
@@ -36,7 +36,7 @@ VR_Assignment1_SaiShrutiPrakhya_MS2024018/
 │   ├── Pan_Living_Room_Keypoints.png
 │   └── Pan_Living_Room_distorted.png
 ├── README.md
-└── requirements.txt
+└── requirements.txt"""
 # Question 1: Coin Detection, Segmentation and Counting
 
 ## Optimal Implementation
