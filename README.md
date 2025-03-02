@@ -66,7 +66,12 @@ Results:
     - Robust edge preservation
 
     - Minimal false positives
-  
+
+  4 coins missed due to:
+  - Low contrast with background (4th from left in top row)
+  - Different texture from others (2 coins in the bottom row)
+  - Intensity variations (middle row)
+
 
 
 ## First Implementation
