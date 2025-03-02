@@ -1,5 +1,43 @@
 # VR_Assignment1
 
+
+VR_Assignment1_SaiShrutiPrakhya_MS2024018/
+├── src/
+│   ├── coin_detection_and_segmentation.py
+│   └── panorama.py
+├── Input_Images/
+│   ├── Indian_Coins.png
+│   ├── Hostel_Common_Room_1.JPG
+│   ├── Hostel_Common_Room_2.JPG
+│   ├── Hostel_Common_Room_3.JPG
+│   ├── Outdoor_1.JPG
+│   ├── Outdoor_2.JPG
+│   ├── Outdoor_3.JPG
+│   ├── Pan_Living_Room1.jpg
+│   ├── Pan_Living_Room2.jpg
+│   └── Pan_Living_Room3.jpg
+├── Results/
+│   ├── Closed_Edges_Coins_Suboptimal.png
+│   ├── Detected_Coins_Optimal.png
+│   ├── Detected_Coins_Suboptimal.png
+│   ├── Detected_Coins_Suboptimal2.png
+│   ├── Detected_Coins_Suboptimal_1.png
+│   ├── Edges_Coins_Suboptimal.png
+│   ├── Indian_Coins_Optimal.png
+│   ├── Indian_Coins_Suboptimal.png
+│   ├── Segmented_Coins_Optimal.png
+│   ├── Segmented_Coins_Suboptimal.png
+│   ├── Segmented_Coins_Suboptimal2.png
+│   ├── Hostel_Common_Room_Keypoints.png
+│   ├── Outdoor_Keypoints.png
+│   ├── Outdoor_Panorama.png
+│   ├── Pan_Hostel_Common_Room.png
+│   ├── Pan_Living_Room_Final.png
+│   ├── Pan_Living_Room_Keypoints.png
+│   └── Pan_Living_Room_distorted.png
+├── README.md
+└── requirements.txt
+
 # Question 1: Coin Detection, Segmentation and Counting
 
 ## Optimal Implementation
