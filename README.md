@@ -37,7 +37,6 @@ VR_Assignment1_SaiShrutiPrakhya_MS2024018/
 │   └── Pan_Living_Room_distorted.png
 ├── README.md
 └── requirements.txt
-
 # Question 1: Coin Detection, Segmentation and Counting
 
 ## Optimal Implementation
