@@ -2,11 +2,52 @@
 
 # Question 1: Coin Detection, Segmentation and Counting
 
-## Optimal Results
 
-![Final1](Results/Indian_Coins_OG.png)
-![Final2](Results/Detected_Coins_Optimal.png)
-![Final3](Results/Segmented_Coins_Optimal.png)
+
+
+## First Implementation
+
+• Initial Implementation Issues:
+
+1. Merged Coin Detection:
+   - Adjacent coins incorrectly detected as single objects
+   - Edge detection and morphological operations creating unwanted bridges
+   - Particularly problematic for touching or closely placed coins
+
+2. Missed Detections:
+   - Failed to detect all coins due to:
+     * Strict Canny thresholds (200-250)
+     * Poor blur kernel parameters
+     * Ineffective morphological operations
+   - RETR_EXTERNAL limiting detection to outer contours only
+   - No shape validation or distance-based separation
+   - Resulted in significant under-counting
+
+3. Loss of Interior Details:
+   - Binary masking (cv2.bitwise_and) eliminated internal features
+   - Inconsistent preservation of details due to lighting variations
+   - Stronger contrast coins retained texture while others reduced to outlines
+  ![Segmented Coins](Results/Segmented_Coins_Suboptimal.png)
+  ![Detected Coins](Results/Detected_Coins_Suboptimal.png)
+
+  ## Second Implementation
+  • Improvements:
+  - Optimized Canny edge detection (100-200 vs 200-250)
+  - Enhanced contrast using CLAHE
+  - Added circularity checks and distance-based separation
+  - Better segmentation with preserved internal details
+  - Reduced merged coin detection
+
+  • Current Issue:
+  - Under-detection (22 vs 34 coins) due to strict filtering parameters (area, circularity, distance) that exclude valid coins.
+
+  ![Detected Coins2](Results/Detected_Coins_Suboptimal_1.png)
+
+  ## Third Implementation
+
+![Final1](Results/Indian_Coins_Suboptimal.png)
+![Final2](Results/Detected_Coins_Suboptimal2.png)
+![Final3](Results/Segmented_Coins_Suboptimal2.png)
 
 ### Coin Detection Algorithm Improvements
 #### Grid Search Optimization
@@ -72,45 +113,6 @@ Results:
   - Different texture from others (2 coins in the bottom row)
   - Intensity variations (middle row)
 
-
-
-## First Implementation
-
-• Initial Implementation Issues:
-
-1. Merged Coin Detection:
-   - Adjacent coins incorrectly detected as single objects
-   - Edge detection and morphological operations creating unwanted bridges
-   - Particularly problematic for touching or closely placed coins
-
-2. Missed Detections:
-   - Failed to detect all coins due to:
-     * Strict Canny thresholds (200-250)
-     * Poor blur kernel parameters
-     * Ineffective morphological operations
-   - RETR_EXTERNAL limiting detection to outer contours only
-   - No shape validation or distance-based separation
-   - Resulted in significant under-counting
-
-3. Loss of Interior Details:
-   - Binary masking (cv2.bitwise_and) eliminated internal features
-   - Inconsistent preservation of details due to lighting variations
-   - Stronger contrast coins retained texture while others reduced to outlines
-  ![Segmented Coins](Results/Segmented_Coins_Suboptimal.png)
-  ![Detected Coins](Results/Detected_Coins_Suboptimal.png)
-
-  ## Second Implementation
-  • Improvements:
-  - Optimized Canny edge detection (100-200 vs 200-250)
-  - Enhanced contrast using CLAHE
-  - Added circularity checks and distance-based separation
-  - Better segmentation with preserved internal details
-  - Reduced merged coin detection
-
-  • Current Issue:
-  - Under-detection (22 vs 34 coins) due to strict filtering parameters (area, circularity, distance) that exclude valid coins.
-
-  ![Detected Coins2](Results/Detected_Coins_Suboptimal_1.png)
   
   
 
