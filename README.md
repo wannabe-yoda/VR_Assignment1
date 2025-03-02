@@ -2,6 +2,58 @@
 
 # Question 1: Coin Detection, Segmentation and Counting
 
+## Optimal Implementation
+
+Initial parameters were too restrictive, missing several unique coins:
+- A hexagonal coin
+- A highly textured coin
+- A ring-shaped coin
+
+### Parameter Optimization Process
+
+1. **First Improvement (32 coins)**
+   - Reduced min_area to detect smaller coins
+   - Lowered circularity threshold to accommodate hexagonal shape
+   - Modified parameters:
+     ```python
+     min_areas = [150, 175, 200]
+     circularities = [0.45, 0.5, 0.55]
+     min_radii = [25, 27, 30]
+     ```
+
+2. **Final Optimization (33 coins)**
+   - Further reduced min_area to 75
+   - Fine-tuned circularity to 0.44
+   - Final parameters:
+     ```python
+     min_area = 75
+     canny_low = 30
+     canny_high = 100
+     circularity = 0.44
+     min_radius = 30
+     ```
+
+### Challenges Encountered
+
+The highly textured coin presented a unique challenge:
+- Its complex surface pattern created multiple edge detections
+- Lower circularity threshold (0.44) was required to detect it
+- This adjustment resulted in losing detection of another coin with cleaner edges
+- Trade-off between detecting textured coins vs maintaining accuracy for regular coins
+
+### Grid Search Improvements
+1. Used more granular parameter steps
+2. Extended parameter ranges to accommodate edge cases
+3. Focused on critical thresholds where coins were being gained/lost
+4. Balanced parameters to maximize total coin detection while minimizing false positives
+
+The results are depicted below:
+
+![Final1](Results/Indian_Coins_Optimal.png)
+![Final2](Results/Detected_Coins_Optimal.png)
+![Final3](Results/Segmented_Coins_Optimal.png)
+
+
 
 
 
