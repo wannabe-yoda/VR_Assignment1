@@ -1,6 +1,7 @@
 # Coin Detection and Segmentation 
 - For coin detection use the Indian_Coins.jpg image in the Input_Images folder
 - For optimal panorama creation use the following images Input_Images/Pan_Living_Room1, Input_Images/Pan_Living_Room2, Input_Images/Pan_Living_Room3.
+- Make sure to modify the file paths according to the environment you use to run the code. The code with the output is visible upon clicking on both the .ipynb files uploaded.
 
 ``` python
 VR_Assignment1_SaiShrutiPrakhya_MS2024018/
